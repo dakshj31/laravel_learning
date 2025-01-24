@@ -7,9 +7,8 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/jobs', [JobController::class, 'index']);
+Route::resource('jobs', JobController::class);
 
-Route::get('/jobs/create', [JobController::class, 'create']);
 
 Route::get('/posts/{id}', function(string $id) {
     return 'Post ' . $id;
