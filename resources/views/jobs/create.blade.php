@@ -65,7 +65,7 @@
       <x-inputs.text id="contact_phone" name="contact_phone" label="Contact Phone" placeholder="Enter phone" />
 
 
-      <x-inputs.text id="contact_email" name="email" label="Contact Email" placeholder="Email where you want to receive applications" />
+      <x-inputs.text id="contact_email" name="contact_email" label="Contact Email" placeholder="Email where you want to receive applications" />
 
 
       <x-inputs.file id="company_logo" name="company_logo" label="Company Logo"/>

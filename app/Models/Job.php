@@ -29,7 +29,7 @@ class Job extends Model
     'contact_phone',
     'company_name',
     'company_description',
-    'comapny_logo',
+    'company_logo',
     'company_website',
     'user_id'
     ];
