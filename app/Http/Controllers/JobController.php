@@ -10,26 +10,23 @@ use Illuminate\Support\Facades\Storage;
 
 class JobController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // @desc show all job listings
+    // @route get/ jobs
     public function index(): view
     {
         $jobs = Job::all();
         return view('jobs.index')->with('jobs', $jobs);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    // @desc show create job form
+    // @route get/ jobs/create
     public function create(): view
     {
         return view('jobs.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    // @desc show job to database
+    // @route post/ jobs
     public function store(Request $request): RedirectResponse
     {
         
@@ -74,25 +71,22 @@ class JobController extends Controller
         return redirect()->route('jobs.index')->with('success', 'Job listing created successfully');
     }
 
-    /**
-     * Display the specified resource.
-     */
+    // @desc display a single job listing
+    // @route get/ jobs/{$id}
     public function show(Job $job): View
     {
         return view('jobs.show')->with('job', $job);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+    // @desc show edit job form
+    // @route get/ jobs/{$id}/edit
     public function edit(Job $job): View
     {
         return view('jobs.edit')->with('job', $job);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    // @desc update job listing
+    // @route put/ jobs/{$id}
     public function update(Request $request, Job $job): string
     {
         $validatedData = $request->validate([
@@ -137,9 +131,8 @@ class JobController extends Controller
         return redirect()->route('jobs.index')->with('success', 'Job listing Updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    // @desc delete job listing
+    // @route DELETE/jobs/{$id}
     public function destroy(Job $job): RedirectResponse
     {
         // if logo then delete it
