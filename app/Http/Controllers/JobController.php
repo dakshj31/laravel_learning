@@ -17,7 +17,7 @@ class JobController extends Controller
     // @route get/ jobs
     public function index(): view
     {
-        $jobs = Job::paginate(9);
+        $jobs = Job::latest()->paginate(9);
         return view('jobs.index')->with('jobs', $jobs);
     }
 
